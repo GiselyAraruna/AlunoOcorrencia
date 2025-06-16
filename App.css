@@ -1,0 +1,191 @@
+:root {
+  font-family: 'Playfair Display', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #cde9ff; /* azul claro para texto */
+  background-color: #ffffff; /* azul escuro profundo */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Link styles */
+a {
+  font-weight: 500;
+  color: #6bb9f0; /* azul médio */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 4px rgba(0, 37, 85, 0.7);
+}
+
+a:hover {
+  color: #a3d1ff; /* azul claro */
+  text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+/* Body and layout */
+body {
+  background-color: #002d66; /* azul escuro profundo */
+  color: #000000; /* azul claro */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #6bb9f0; /* azul médio */
+  text-shadow: 2px 2px 8px rgba(0, 37, 85, 0.7);
+  margin-bottom: 20px;
+}
+
+/* Buttons - base */
+button {
+  border-radius: 8px;
+  border: 2px solid #6bb9f0; /* azul médio */
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: inherit;
+  background-color: transparent;
+  color: #a3d1ff; /* azul claro */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(107, 185, 240, 0.2);
+}
+
+button:hover {
+  color: #002d66; /* azul escuro */
+  background-color: #6bb9f022; /* azul médio com transparência */
+  border-color: #a3d1ff; /* azul claro */
+  box-shadow: 0 0 15px #6bb9f0; /* azul médio */
+  transform: scale(1.05);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #a3d1ff; /* azul claro */
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 0.8s;
+}
+
+button:hover::before {
+  width: 250%;
+}
+
+/* Dark theme: login card container */
+#root {
+  width: 90%;
+  max-width: 400px;
+  margin: 5vh auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #cde9ff, #95c3f1); /* azul claro degradê */
+  color: #002d66; /* azul escuro */
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 37, 85, 0.2);
+  font-family: 'Playfair Display', serif, system-ui, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form container */
+.login-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input fields */
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  font-size: 1rem;
+  border: 1.5px solid #3f7abf; /* azul médio escuro */
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0a1f44; /* azul muito escuro */
+  color: #2a9ff8; /* azul vibrante */
+}
+
+.login-card input:focus {
+  border-color: #2b5f9e; /* azul mais escuro */
+  box-shadow: 0 0 5px rgba(63, 122, 191, 0.4);
+}
+
+/* Login button inside login card */
+.login-card button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #007BFF; /* azul forte */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-card button:hover {
+  background-color: #0056b3; /* azul escuro no hover */
+  transform: scale(1.05);
+}
+
+/* Light theme overrides */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #204070; /* azul médio escuro */
+    background-color: #000000; /* azul bem claro */
+  }
+
+  a {
+    color: #2b5f9e; /* azul médio */
+  }
+
+  a:hover {
+    color: #1e4a7c; /* azul escuro */
+  }
+
+  body {
+    background-color: #dbe9fb; /* azul claro */
+    color: #204070; /* azul médio escuro */
+  }
+
+  button {
+    background-color: #ebf4ff; /* azul muito claro */
+    color: #2b5f9e; /* azul médio */
+    border-color: #2b5f9e; /* azul médio */
+  }
+
+  button:hover {
+    background-color: #2b5f9e22; /* azul médio translúcido */
+    box-shadow: 0 0 10px #2b5f9e; /* azul médio */
+    color: #fff;
+  }
+}
